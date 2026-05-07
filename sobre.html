@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sobre | Carolina H. Marcello</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#111;
+    }
+
+    header{
+      width:100%;
+      padding:20px 8%;
+      background:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #ddd;
+    }
+
+    header a{
+      text-decoration:none;
+      color:#111;
+      font-weight:bold;
+      font-size:18px;
+    }
+
+    .sobre{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:80px 8%;
+    }
+
+    .sobre-box{
+      max-width:1200px;
+      width:100%;
+      background:white;
+      border-radius:30px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    }
+
+    .sobre-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .sobre-content{
+      padding:60px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .sobre-content h1{
+      font-size:48px;
+      margin-bottom:25px;
+    }
+
+    .sobre-content p{
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:20px;
+      color:#444;
+    }
+
+    .creci{
+      margin-top:20px;
+      font-weight:bold;
+      color:#111;
+      font-size:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      background:black;
+      color:white;
+      padding:16px 30px;
+      border-radius:14px;
+      text-decoration:none;
+      width:max-content;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#333;
+    }
+
+    @media(max-width:900px){
+
+      .sobre-box{
+        grid-template-columns:1fr;
+      }
+
+      .sobre-content{
+        padding:40px;
+      }
+
+      .sobre-content h1{
+        font-size:36px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<header>
+
+  <a href="index.html">← Voltar para Home</a>
+
+</header>
+
+<section class="sobre">
+
+  <div class="sobre-box">
+
+    <div class="sobre-img">
+
+      <img src="carolina.jpg.png">
+
+    </div>
+
+    <div class="sobre-content">
+
+      <h1>Carolina H. Marcello</h1>
+
+      <p>
+        Carolina H. Marcello atua no mercado imobiliário oferecendo
+        atendimento personalizado para clientes que desejam comprar,
+        vender, alugar ou investir em imóveis com mais segurança
+        e orientação profissional.
+      </p>
+
+      <p>
+        Além da atuação como corretora de imóveis, também exerce
+        a função de Perita Avaliadora Judicial, realizando análises
+        técnicas e avaliações imobiliárias com responsabilidade,
+        precisão e credibilidade.
+      </p>
+
+      <div class="creci">
+
+        CRECI 54.926 • CNAI 22.297
+
+      </div>
+
+      <a class="btn" href="#">
+
+        Falar no WhatsApp
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+
+</html>
