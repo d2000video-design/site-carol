@@ -280,7 +280,7 @@ fetch(api)
 
   const fotoPrincipal = fotos[0];
 
-  const miniaturas = fotos.slice(1, 3).map(foto => `
+  const miniaturas = fotos.slice(1).map(foto => `
     <img src="${foto}" onclick="trocarFoto('${foto}')">
   `).join("");
 
