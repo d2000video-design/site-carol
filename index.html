@@ -450,68 +450,62 @@
 </a>
 
 <script>
-
 function toggleCard(card){
   card.classList.toggle("ativo");
 }
 
-const url =
-'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcdW9RdIa1N2FA3q--GfFlZFslwPb7pOSn-RnvEUH9xrnH9qWp3ikF_MiYN5NgZA/pub?output=csv';
+const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcdW9RdIa1N2FA3q--GfFlZFslwPb7pOSn-RnvEUH9xrnH9qWp3ikF_MiYN5NgZA/pub?output=csv';
 
 fetch(url)
 .then(response => response.text())
 .then(data => {
 
   const linhas = data.split('\n').slice(1);
-
   const container = document.getElementById('lista-imoveis');
+
+  container.innerHTML = "";
 
   linhas.forEach(linha => {
 
+    if(!linha.trim()) return;
+
     const colunas = linha.split(',');
 
-    const status = colunas[0];
+    const status = (colunas[0] || "").trim();
 
-    if(status.trim() === 'ativo'){
+    if(status === "ativo"){
 
-      const titulo = colunas[2].trim();
-      const cidade = colunas[4].trim();
-     const valor = colunas[6].trim();
-     const foto = colunas[13].trim();
-      const whatsapp = colunas[18].trim();
+      const titulo = (colunas[2] || "").trim();
+      const cidade = (colunas[4] || "").trim();
+      const valor = (colunas[6] || "").trim();
+      const foto = (colunas[13] || "").trim();
+      const whatsapp = (colunas[18] || "https://wa.me/5551999954842").trim();
 
       const card = `
         <div class="imovel">
-
           <img src="${foto}" alt="${titulo}">
 
           <div class="imovel-content">
-
             <h3>${titulo}</h3>
-
             <p>${cidade}</p>
-
             <div class="valor">${valor}</div>
 
-            <a class="btn"
-               href="${whatsapp}"
-               target="_blank">
-               Saiba Mais
+            <a class="btn" href="${whatsapp}" target="_blank">
+              Saiba Mais
             </a>
-
           </div>
-
         </div>
       `;
 
       container.innerHTML += card;
-
     }
 
   });
 
+})
+.catch(error => {
+  console.log("Erro ao carregar imóveis:", error);
 });
-
 </script>
 
 </body>
