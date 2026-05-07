@@ -168,6 +168,11 @@
     .imovel h3{
       margin-bottom:10px;
     }
+    .codigo{
+  font-size:14px;
+  color:#777;
+  margin:8px 0;
+}
 
     .valor{
       margin-top:15px;
@@ -472,6 +477,7 @@ fetch(url)
 
           <div class="imovel-content">
             <h3>${imovel.titulo}</h3>
+            <p class="codigo">Código: ${imovel.codigo}</p>
             <p>${imovel.cidade}</p>
             <div class="valor">${imovel.valor}</div>
 
