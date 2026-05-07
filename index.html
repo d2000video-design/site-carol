@@ -450,9 +450,68 @@
 </a>
 
 <script>
-  function toggleCard(card){
-    card.classList.toggle("ativo");
-  }
+
+function toggleCard(card){
+  card.classList.toggle("ativo");
+}
+
+const url =
+'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcdW9RdIa1N2FA3q--GfFlZFslwPb7pOSn-RnvEUH9xrnH9qWp3ikF_MiYN5NgZA/pub?output=csv';
+
+fetch(url)
+.then(response => response.text())
+.then(data => {
+
+  const linhas = data.split('\n').slice(1);
+
+  const container = document.getElementById('lista-imoveis');
+
+  linhas.forEach(linha => {
+
+    const colunas = linha.split(',');
+
+    const status = colunas[0];
+
+    if(status.trim() === 'ativo'){
+
+      const titulo = colunas[2];
+      const cidade = colunas[4];
+      const valor = colunas[6];
+      const foto = colunas[13];
+      const whatsapp = colunas[18];
+
+      const card = `
+        <div class="imovel">
+
+          <img src="${foto}" alt="${titulo}">
+
+          <div class="imovel-content">
+
+            <h3>${titulo}</h3>
+
+            <p>${cidade}</p>
+
+            <div class="valor">${valor}</div>
+
+            <a class="btn"
+               href="${whatsapp}"
+               target="_blank">
+               Saiba Mais
+            </a>
+
+          </div>
+
+        </div>
+      `;
+
+      container.innerHTML += card;
+
+    }
+
+  });
+
+});
+
 </script>
 
 </body>
