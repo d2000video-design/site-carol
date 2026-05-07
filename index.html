@@ -6,12 +6,15 @@
   <title>Carolina H. Marcello</title>
 
   <style>
-
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
       font-family:Arial, Helvetica, sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
@@ -62,14 +65,14 @@
     }
 
     .hero-content{
-  position:relative;
-  z-index:2;
-  color:white;
-  max-width:900px;
-  width:100%;
-  margin:0 auto;
-  padding:20px;
-}
+      position:relative;
+      z-index:2;
+      color:white;
+      max-width:900px;
+      width:100%;
+      margin:0 auto;
+      padding:20px;
+    }
 
     .hero h2{
       font-size:52px;
@@ -96,45 +99,47 @@
       gap:20px;
     }
 
-.card{
-  background:white;
-  padding:35px;
-  border-radius:24px;
-  min-height:120px;
-  cursor:pointer;
-  transition:0.3s;
-  border:1px solid #ececec;
-  box-shadow:0 10px 30px rgba(0,0,0,0.04);
-}
+    .card{
+      background:white;
+      padding:35px;
+      border-radius:24px;
+      min-height:120px;
+      cursor:pointer;
+      transition:0.3s;
+      border:1px solid #ececec;
+      box-shadow:0 10px 30px rgba(0,0,0,0.04);
+    }
 
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
-}
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.08);
+    }
 
-.card h3{
-  font-size:24px;
-  line-height:1.3;
-  color:#111;
-}
+    .card h3{
+      font-size:24px;
+      line-height:1.3;
+      color:#111;
+    }
 
-.card p{
-  display:none;
-  margin-top:20px;
-  font-size:16px;
-  line-height:1.7;
-  color:#555;
-}
+    .card p{
+      display:none;
+      margin-top:20px;
+      font-size:16px;
+      line-height:1.7;
+      color:#555;
+    }
 
-.card.ativo p{
-  display:block;
-}
+    .card.ativo p{
+      display:block;
+    }
 
-.card p{
-  font-size:16px;
-  line-height:1.7;
-  color:#555;
-}
+    .contato .card{
+      cursor:default;
+    }
+
+    .contato .card p{
+      display:block;
+    }
 
     .imoveis{
       display:grid;
@@ -174,9 +179,16 @@
       margin-top:20px;
       background:black;
       color:white;
-      padding:14px 28px;
+      padding:14px 24px;
       border-radius:12px;
       text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#333;
+      transform:translateY(-2px);
     }
 
     footer{
@@ -184,266 +196,238 @@
       color:white;
       text-align:center;
       padding:30px;
+      font-size:14px;
+      line-height:1.6;
     }
 
-@media(max-width:768px){
+    .whatsapp-float{
+      position:fixed;
+      width:70px;
+      height:70px;
+      bottom:30px;
+      right:30px;
+      z-index:9999;
+    }
 
-  header{
-    padding:16px 5%;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-  }
+    .whatsapp-float img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
 
-  header h1{
-    font-size:20px;
-    text-align:center;
-  }
-
-  nav{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px 16px;
-    margin-top:6px;
-  }
-
-  nav a{
-    margin-left:0;
-    font-size:14px;
-  }
-
-  .hero{
-    height:62vh;
-    padding:0 6%;
-  }
-
-  .hero-content{
-    max-width:360px;
-    margin:0 auto;
-  }
-
-  .hero h2{
-    font-size:26px;
-    line-height:1.15;
-  }
-
-  .hero p{
-    font-size:14px;
-    line-height:1.45;
-    margin-top:14px;
-  }
-
-  section{
-    padding:55px 6%;
-  }
-
-  .title{
-    font-size:36px;
-    line-height:1.1;
-    margin-bottom:24px;
-  }
-
-  .services,
-  .imoveis{
-    grid-template-columns:1fr;
-    gap:18px;
-  }
-
-  .card{
-    padding:24px;
-    border-radius:20px;
-    min-height:auto;
-  }
-
-  .card h3{
-    font-size:20px;
-    line-height:1.2;
-  }
-
-  .card p{
-    font-size:14px;
-    line-height:1.5;
-    margin-top:14px;
-  }
-
-  .btn{
-    padding:11px 18px;
-    font-size:14px;
-    border-radius:10px;
-  }
-
-  .imovel img{
-    height:220px;
-  }
-
-  .valor{
-    font-size:28px;
-  }
-
-  .whatsapp-float{
-    width:52px;
-    height:52px;
-    right:14px;
-    bottom:14px;
-  }
-
-}
-
-.whatsapp-float img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
     .whatsapp-icon{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-    .btn{
-  display:inline-block;
-  margin-top:20px;
-  background:black;
-  color:white;
-  padding:14px 24px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
-}
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
 
-.btn:hover{
-  background:#333;
-  transform:translateY(-2px);
-}
+    @media(max-width:768px){
+
+      header{
+        padding:16px 5%;
+        flex-direction:column;
+        align-items:center;
+        gap:8px;
+        position:relative;
+      }
+
+      header h1{
+        font-size:20px;
+        text-align:center;
+      }
+
+      nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:8px 16px;
+        margin-top:6px;
+      }
+
+      nav a{
+        margin-left:0;
+        font-size:14px;
+      }
+
+      .hero{
+        height:62vh;
+        padding:0 6%;
+      }
+
+      .hero-content{
+        max-width:390px;
+        margin:0 auto;
+      }
+
+      .hero h2{
+        font-size:25px;
+        line-height:1.15;
+      }
+
+      .hero p{
+        font-size:14px;
+        line-height:1.45;
+        margin-top:14px;
+      }
+
+      section{
+        padding:55px 6%;
+      }
+
+      .title{
+        font-size:32px;
+        line-height:1.1;
+        margin-bottom:24px;
+      }
+
+      .services,
+      .imoveis{
+        grid-template-columns:1fr;
+        gap:18px;
+      }
+
+      .card{
+        padding:24px;
+        border-radius:20px;
+        min-height:auto;
+      }
+
+      .card h3{
+        font-size:20px;
+        line-height:1.2;
+      }
+
+      .card p{
+        font-size:14px;
+        line-height:1.5;
+        margin-top:14px;
+      }
+
+      .btn{
+        padding:11px 18px;
+        font-size:14px;
+        border-radius:10px;
+      }
+
+      .imovel img{
+        height:220px;
+      }
+
+      .valor{
+        font-size:24px;
+      }
+
+      .whatsapp-float{
+        width:52px;
+        height:52px;
+        right:14px;
+        bottom:14px;
+      }
+    }
   </style>
-
 </head>
 
 <body>
 
 <header>
-
   <h1>Carolina H. Marcello</h1>
 
   <nav>
-<a href="index.html">Início</a>
-<a href="sobre.html">Sobre</a>
-<a href="#servicos">Serviços</a>
-<a href="#imoveis">Imóveis</a>
-<a href="#contato">Contato</a>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#imoveis">Imóveis</a>
+    <a href="#contato">Contato</a>
   </nav>
-
 </header>
 
 <section class="hero">
-
   <div class="overlay"></div>
 
   <div class="hero-content">
-
     <h2>Seu próximo imóvel começa com a orientação certa.</h2>
 
     <p>
       Atendimento personalizado para compra, venda,
       locação e consultoria imobiliária.
     </p>
-
   </div>
-
 </section>
 
 <section id="servicos">
-
   <h2 class="title">Serviços</h2>
 
   <div class="services">
 
-<div class="card" onclick="toggleCard(this)">
-  <h3>Compra de imóveis</h3>
-  <p>Orientação profissional para encontrar o imóvel ideal com mais segurança, análise de oportunidades e suporte durante todo o processo.</p>
-</div>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Compra de imóveis</h3>
+      <p>Orientação profissional para encontrar o imóvel ideal com mais segurança, análise de oportunidades e suporte durante todo o processo.</p>
+    </div>
 
-<div class="card" onclick="toggleCard(this)">
-  <h3>Venda de imóveis</h3>
-  <p>Estratégias de divulgação e posicionamento para aumentar a visibilidade e acelerar negociações imobiliárias.</p>
-</div>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Venda de imóveis</h3>
+      <p>Estratégias de divulgação e posicionamento para aumentar a visibilidade e acelerar negociações imobiliárias.</p>
+    </div>
 
-<div class="card" onclick="toggleCard(this)">
-  <h3>Locação</h3>
-  <p>Intermediação de locações residenciais e comerciais com acompanhamento e organização documental.</p>
-</div>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Locação</h3>
+      <p>Intermediação de locações residenciais e comerciais com acompanhamento e organização documental.</p>
+    </div>
 
-<div class="card" onclick="toggleCard(this)">
-  <h3>Consultoria imobiliária</h3>
-  <p>Atendimento personalizado para compradores, vendedores e investidores que desejam tomar decisões mais seguras.</p>
-</div>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Consultoria imobiliária</h3>
+      <p>Atendimento personalizado para compradores, vendedores e investidores que desejam tomar decisões mais seguras.</p>
+    </div>
 
-<div class="card" onclick="toggleCard(this)">
-  <h3>Regularização documental</h3>
-  <p>Apoio em documentação imobiliária, contratos e processos relacionados à regularização de imóveis.</p>
-</div>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Regularização documental</h3>
+      <p>Apoio em documentação imobiliária, contratos e processos relacionados à regularização de imóveis.</p>
+    </div>
 
-<div class="card" onclick="toggleCard(this)">
-  <h3>Apoio para investidores</h3>
-  <p>Identificação de oportunidades e análise estratégica para investimentos imobiliários com maior segurança.</p>
-</div>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Apoio para investidores</h3>
+      <p>Identificação de oportunidades e análise estratégica para investimentos imobiliários com maior segurança.</p>
+    </div>
 
-<div class="card" onclick="toggleCard(this)">
-  <h3>Avaliação imobiliária</h3>
-  <p>Avaliações técnicas e mercadológicas realizadas com responsabilidade, precisão e credibilidade para diferentes finalidades.</p>
-</div>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Avaliação imobiliária</h3>
+      <p>Avaliações técnicas e mercadológicas realizadas com responsabilidade, precisão e credibilidade para diferentes finalidades.</p>
+    </div>
+
   </div>
-
 </section>
 
-<section>
-
+<section id="imoveis">
   <h2 class="title">Imóveis em Destaque</h2>
 
   <div class="imoveis">
 
     <div class="imovel">
-
       <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200&auto=format&fit=crop">
 
       <div class="imovel-content">
-
         <h3>Casa Moderna</h3>
-
         <p>São Paulo - SP</p>
-
         <div class="valor">R$ 890.000</div>
-
         <a class="btn" href="#">Saiba Mais</a>
-
       </div>
-
     </div>
 
     <div class="imovel">
-
       <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200&auto=format&fit=crop">
 
       <div class="imovel-content">
-
         <h3>Apartamento Premium</h3>
-
         <p>Campinas - SP</p>
-
         <div class="valor">R$ 720.000</div>
-
         <a class="btn" href="#">Saiba Mais</a>
-
       </div>
-
     </div>
 
   </div>
-
 </section>
-<section id="contato">
 
+<section id="contato" class="contato">
   <h2 class="title">Contato</h2>
 
   <div class="services">
@@ -452,9 +436,8 @@
       <h3>E-mail</h3>
       <p>Envie uma mensagem diretamente para Carolina.</p>
 
-      <a class="btn"
-         href="mailto:carolinah.marcello@gmail.com">
-         Enviar e-mail
+      <a class="btn" href="mailto:carolinah.marcello@gmail.com">
+        Enviar e-mail
       </a>
     </div>
 
@@ -462,9 +445,8 @@
       <h3>Telefone</h3>
       <p>Fale pelo telefone ou abra o discador no celular.</p>
 
-      <a class="btn"
-         href="tel:+5551999954842">
-         Ligar agora
+      <a class="btn" href="tel:+5551999954842">
+        Ligar agora
       </a>
     </div>
 
@@ -472,28 +454,28 @@
       <h3>WhatsApp</h3>
       <p>Atendimento direto pelo WhatsApp.</p>
 
-      <a class="btn"
-         href="https://wa.me/5551999954842"
-         target="_blank">
-         Abrir WhatsApp
+      <a class="btn" href="https://wa.me/5551999954842" target="_blank">
+        Abrir WhatsApp
       </a>
     </div>
 
   </div>
-
 </section>
+
 <footer>
-
-  © 2026 Carolina H. Marcello Desenvolvido por Me Grupo Criativo +351 937 084 499
-
+  © 2026 Carolina H. Marcello<br>
+  Desenvolvido por Me Grupo Criativo • +351 937 084 499
 </footer>
+
 <a class="whatsapp-float" href="https://wa.me/5551999954842" target="_blank">
   <img class="whatsapp-icon" src="whatsapp-logo.png" alt="WhatsApp">
 </a>
-  <script>
-function toggleCard(card){
-  card.classList.toggle("ativo");
-}
+
+<script>
+  function toggleCard(card){
+    card.classList.toggle("ativo");
+  }
 </script>
+
 </body>
 </html>
