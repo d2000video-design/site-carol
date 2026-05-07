@@ -474,11 +474,11 @@ fetch(url)
 
     if(status.trim() === 'ativo'){
 
-      const titulo = colunas[2];
-      const cidade = colunas[4];
-      const valor = colunas[6];
-      const foto = colunas[13];
-      const whatsapp = colunas[18];
+      const titulo = colunas[2].trim();
+      const cidade = colunas[4].trim();
+     const valor = colunas[6].trim();
+     const foto = colunas[13].trim();
+      const whatsapp = colunas[18].trim();
 
       const card = `
         <div class="imovel">
