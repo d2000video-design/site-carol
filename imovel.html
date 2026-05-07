@@ -60,20 +60,27 @@
       display:block;
     }
 
-    .foto-principal{
-      height:520px;
-    }
+   .foto-principal{
+  height:520px;
+  overflow:hidden;
+  border-radius:22px;
+}
 
     .miniaturas{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-    }
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  align-content:start;
+}
 
-    .miniaturas img{
-      height:251px;
-      cursor:pointer;
-    }
+.miniaturas img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:16px;
+  cursor:pointer;
+  display:block;
+}
 
     .conteudo{
       display:grid;
