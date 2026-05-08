@@ -99,6 +99,32 @@
       border-radius:22px;
       display:block;
     }
+    .slider{
+  position:relative;
+}
+
+.seta{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+  z-index:10;
+}
+
+.esquerda{
+  left:20px;
+}
+
+.direita{
+  right:20px;
+}
 
    .foto-principal{
   height:520px;
@@ -344,9 +370,21 @@ fetch(api)
         <img id="foto-principal" src="${fotoPrincipal}" alt="${imovel.titulo}">
       </div>
 
-      <div class="miniaturas">
-        ${miniaturas}
-      </div>
+      <section class="galeria">
+
+  <div class="slider">
+
+    <button class="seta esquerda" onclick="fotoAnterior()">❮</button>
+
+    <div class="foto-principal">
+      <img id="foto-principal" src="${fotoPrincipal}" alt="${imovel.titulo}">
+    </div>
+
+    <button class="seta direita" onclick="proximaFoto()">❯</button>
+
+  </div>
+
+</section>
     </section>
 
     <section class="conteudo">
@@ -385,6 +423,31 @@ fetch(api)
 
 function trocarFoto(foto){
   document.getElementById("foto-principal").src = foto;
+}
+  let indiceAtual = 0;
+
+function atualizarFoto(){
+  document.getElementById("foto-principal").src = fotos[indiceAtual];
+}
+
+function proximaFoto(){
+  indiceAtual++;
+
+  if(indiceAtual >= fotos.length){
+    indiceAtual = 0;
+  }
+
+  atualizarFoto();
+}
+
+function fotoAnterior(){
+  indiceAtual--;
+
+  if(indiceAtual < 0){
+    indiceAtual = fotos.length - 1;
+  }
+
+  atualizarFoto();
 }
 </script>
 
