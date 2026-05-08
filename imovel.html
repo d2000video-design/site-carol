@@ -340,7 +340,7 @@ fetch(api)
     return;
   }
 
-  const fotos = [
+window.fotos = [
   imovel.foto_principal,
   imovel.foto2,
   imovel.foto3,
@@ -358,11 +358,11 @@ fetch(api)
   imovel.foto15
 ].filter(foto => foto && foto.trim() !== "");
 
-  const fotoPrincipal = fotos[0];
+const fotoPrincipal = window.fotos[0];
 
-  const miniaturas = fotos.slice(1).map(foto => `
-    <img src="${foto}" onclick="trocarFoto('${foto}')">
-  `).join("");
+const miniaturas = window.fotos.slice(1).map(foto => `
+  <img src="${foto}" onclick="trocarFoto('${foto}')">
+`).join("");
 
   pagina.innerHTML = `
    
